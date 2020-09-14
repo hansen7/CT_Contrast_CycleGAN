@@ -18,4 +18,4 @@ do
         --model test \
         --no_dropout ;
     python gen_nifti.py --ct_id ${ids} ;
-done < filelists/subset.txt
+done < filelists/subset_4.txt

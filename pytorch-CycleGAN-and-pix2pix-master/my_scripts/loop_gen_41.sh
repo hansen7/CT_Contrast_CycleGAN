@@ -7,7 +7,7 @@ while read ids;
 do
     echo "$ids";
     python convert_img.py --ct_id ${ids} ;
-    python test.py --gpu_ids 0 \
+    python test.py --gpu_ids 3 \
         --dataroot datasets/contrast2no_new/${ids} \
         --results_dir results/${ids} \
         --name contrast2no_new \
@@ -18,4 +18,4 @@ do
         --model test \
         --no_dropout ;
     python gen_nifti.py --ct_id ${ids} ;
-done < filelists/subset.txt
+done < filelists/subset_15.txt
