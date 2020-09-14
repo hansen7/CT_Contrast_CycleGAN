@@ -6,7 +6,7 @@ while read ids;
 do
     echo "$ids";
     python convert_img.py --ct_id $ids ;
-    python test.py --gpu_ids 6 \
+    python test.py --gpu_ids 0 \
         --dataroot datasets/contrast2no_new/$ids \
         --results_dir results/$ids \
         --name contrast2no_new \

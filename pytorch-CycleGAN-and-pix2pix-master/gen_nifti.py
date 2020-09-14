@@ -8,7 +8,7 @@ if __name__ == "__main__":
     parser = parser.parse_args()
     ct_id = parser.ct_id  # ct_id = 'Covid4238_20170112_0_0'
     
-    nifti_filename = os.path.join('./COVID-19/NHSX/nifti', ct_id + '.nii.gz')
+    nifti_filename = os.path.join('./nhsx/nifti', ct_id + '.nii.gz')
     ctimg = nib.load(nifti_filename)
     ct_arrays = ctimg.get_fdata()
     _, _, z_num = ct_arrays.shape
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     for idx in range(z_num):
         new_data[:,:,idx] = plt.imread(os.path.join(img_dir, '%d_fake.png'%idx))[:,:,0]
 
-    ct_out_dir = './COVID-19/NHSX/nifti_CycleGAN_Converted'
+    ct_out_dir = './nhsx/nifti_CycleGAN_Converted'
     os.makedirs(ct_out_dir, exist_ok=True)
 
     # ref: https://bic-berkeley.github.io/psych-214-fall-2016/saving_images.html
